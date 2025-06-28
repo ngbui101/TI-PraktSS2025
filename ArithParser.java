@@ -48,7 +48,7 @@ public class ArithParser {
       match(ops, t + 1);
       return term(t + 1) && rightExpression(t + 1);
     }
-    ausgabe("  (ε)", t + 1);
+    ausgabe("Epsilon", t + 1); // Angepasst für Aufgabe b)
     return true;
   }
 
@@ -72,7 +72,7 @@ public class ArithParser {
       match(ops, t + 1);
       return operator(t + 1) && rightTerm(t + 1);
     }
-    ausgabe("  (ε)", t + 1);
+    ausgabe("Epsilon", t + 1); // Angepasst für Aufgabe b)
     return true;
   }
 
@@ -206,7 +206,12 @@ public class ArithParser {
    * Methode zum Ausgeben eines Syntaxfehlers.
    */
   static void syntaxError(String s) {
-    System.out.println("\nSyntax Fehler beim " + (pointer + 1) + ". Zeichen: '" + input[pointer] + "'");
+    // EOF ('ÿ') ist für den Benutzer nicht hilfreich, also geben wir eine bessere Meldung aus.
+    if (input[pointer] == EOF) {
+        System.out.println("\nSyntax Fehler am Ende der Eingabe.");
+    } else {
+        System.out.println("\nSyntax Fehler beim " + (pointer + 1) + ". Zeichen: '" + input[pointer] + "'");
+    }
     System.out.println(s);
   }
 
