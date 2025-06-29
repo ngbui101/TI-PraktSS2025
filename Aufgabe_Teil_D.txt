@@ -1,0 +1,1 @@
+Die Implementierung in der Vorlesung funktioniert nicht, weil sie zu einer Endlosrekursion führt.

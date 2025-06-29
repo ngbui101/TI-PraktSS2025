@@ -1,0 +1,36 @@
+Testausdruck:  (8+3)*2
+
+expression->
+  term->
+    operator->
+      match: (
+      expression->
+        term->
+          operator->
+            num->
+              digit->
+                match: 8
+          rightTerm->
+            Epsilon
+        rightExpression->
+          match: +
+          term->
+            operator->
+              num->
+                digit->
+                  match: 3
+            rightTerm->
+              Epsilon
+          rightExpression->
+            Epsilon
+      match: )
+    rightTerm->
+      match: *
+      operator->
+        num->
+          digit->
+            match: 2
+      rightTerm->
+        Epsilon
+  rightExpression->
+    Epsilon
