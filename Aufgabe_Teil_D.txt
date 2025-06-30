@@ -1,1 +1,1 @@
-Die Implementierung in der Vorlesung funktioniert nicht, weil sie zu einer Endlosrekursion führt.
+Man kann die Regel num → num digit | digit nicht verwenden, weil sie linksrekursiv ist. In einem Parser, der nach dem Prinzip des rekursiven Abstiegs arbeitet, führt dies zu einer Endlosrekursion
